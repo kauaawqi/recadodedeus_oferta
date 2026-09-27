@@ -17,5 +17,5 @@ export const DEPOIMENTOS = [
   { src: 'public/depoimentos/depoimento-zap2.jpg', alt: 'Conversa no WhatsApp em que a cliente Maria mostra os recados impressos' },
   { src: 'public/depoimentos/depoimento-zap3.jpg', alt: 'Conversa no WhatsApp em que a cliente Maria mostra os recados impressos' },
   { src: 'public/depoimentos/depoimento-zap4.jpg', alt: 'Conversa no WhatsApp em que a cliente Maria mostra os recados impressos' },
-  { src: 'public/depoimentos/depoimento-zap5.jpg', alt: 'Conversa no WhatsApp em que a cliente Maria mostra os recados impressos' },
+  
 ];
