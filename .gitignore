@@ -1,0 +1,14 @@
+# Dependências e build (a Vercel instala e gera sozinha)
+node_modules/
+dist/
+
+# Prints de depoimentos que não são de clientes do Recado do Céu
+public/depoimentos/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.env
+.env.*
