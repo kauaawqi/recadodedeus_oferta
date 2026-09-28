@@ -24,6 +24,36 @@ export function useNoIndex() {
   }, []);
 }
 
+/* ---------- Back redirect (UTMify) ----------
+   Mesmo comportamento do script da UTMify: cria entradas extras no histórico e,
+   quando a pessoa aperta "voltar", manda para `url` repassando os parâmetros da
+   URL atual (UTMs). O listener só existe enquanto a página que usa o hook está aberta. */
+let backRedirectArmed = false;
+
+export function useBackRedirect(url) {
+  useEffect(() => {
+    if (!url) return;
+
+    const params = location.search.replace('?', '');
+    const target = url.trim() + (params ? (url.includes('?') ? '&' : '?') + params : '');
+
+    if (!backRedirectArmed) {
+      backRedirectArmed = true;
+      history.pushState({}, '', location.href);
+      history.pushState({}, '', location.href);
+      history.pushState({}, '', location.href);
+    }
+
+    const onPop = () => {
+      setTimeout(() => {
+        location.href = target;
+      }, 1);
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, [url]);
+}
+
 /* ---------- Fade-in suave ao rolar ---------- */
 let observer;
 function getObserver() {

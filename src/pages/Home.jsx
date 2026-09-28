@@ -11,7 +11,7 @@ import {
   Quote,
   Star,
 } from 'lucide-react';
-import { PRICES } from '../config.js';
+import { BACK_REDIRECT_URL, PRICES } from '../config.js';
 import Offers from '../components/Offers.jsx';
 import Countdown from '../components/Countdown.jsx';
 import { DEPOIMENTOS } from '../depoimentos.js';
@@ -24,6 +24,7 @@ import {
   Ornament,
   Reveal,
   StickyBar,
+  useBackRedirect,
   usePageMeta,
 } from '../components/ui.jsx';
 
@@ -128,6 +129,7 @@ export default function Home() {
     '300 recados bíblicos organizados por situação, prontos para imprimir em casa e entregar a quem precisa de uma palavra de fé. Acesso imediato.'
   );
   const heroRef = useRef(null);
+  useBackRedirect(BACK_REDIRECT_URL);
 
   return (
     <>

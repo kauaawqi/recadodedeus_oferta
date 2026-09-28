@@ -16,6 +16,18 @@ function ScrollToTop() {
   return null;
 }
 
+// Links internos da mesma página (#oferta, #acervo, #plano) rolam até a seção sem
+// criar entrada no histórico. Assim o botão "voltar" não fica preso nesses saltos
+// e não dispara o back redirect por engano.
+document.addEventListener('click', (e) => {
+  const a = e.target.closest?.('a[href^="#"]');
+  if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+  const el = document.getElementById(a.getAttribute('href').slice(1));
+  if (!el) return;
+  e.preventDefault();
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>

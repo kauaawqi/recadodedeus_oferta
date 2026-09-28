@@ -42,6 +42,11 @@ export const PROMO = {
   fim: '2026-09-27T23:59:59-03:00',
 };
 
+// Back redirect (UTMify): para onde vai quem aperta "voltar" na página de vendas ("/").
+// Os parâmetros da URL (UTMs etc.) são repassados junto, como no script da UTMify.
+// Deixe vazio ('') para desativar.
+export const BACK_REDIRECT_URL = '';
+
 export const CONTACT_EMAIL = 'recadodoceu@gmail.com';
 
 // Amostra grátis: quando tiver a URL do webhook da sua ferramenta de
