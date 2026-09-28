@@ -8,6 +8,7 @@ import {
   HandHeart,
   Heart,
   HeartPulse,
+  Quote,
   Star,
 } from 'lucide-react';
 import { PRICES } from '../config.js';
@@ -93,20 +94,26 @@ function Testimonials() {
 
   return (
     <div className="marquee" role="region" aria-label="Depoimentos de clientes">
-      <div className="marquee-track" style={{ '--duration': `${half.length * 7}s` }}>
+      <div className="marquee-track" style={{ '--duration': `${half.length * 9}s` }}>
         {loop.map((d, i) => {
           const copy = i >= DEPOIMENTOS.length; // cópias ficam ocultas para leitores de tela
           return (
-            <figure className="print" key={i} aria-hidden={copy || undefined}>
-              <img
-                src={d.src}
-                alt={copy ? '' : d.alt}
-                loading="lazy"
-                decoding="async"
-                width="520"
-                height="924"
-                draggable="false"
-              />
+            <figure className="card testimonial" key={i} aria-hidden={copy || undefined}>
+              <Quote className="testimonial-quote" size={28} strokeWidth={1.25} aria-hidden="true" />
+              <blockquote>{d.texto}</blockquote>
+              <figcaption>
+                {d.foto ? (
+                  <img src={d.foto} alt="" loading="lazy" className="avatar" draggable="false" />
+                ) : (
+                  <span className="avatar avatar-initial" aria-hidden="true">
+                    {d.nome.trim().charAt(0).toUpperCase()}
+                  </span>
+                )}
+                <span>
+                  <strong>{d.nome}</strong>
+                  {d.cidade && <small>{d.cidade}</small>}
+                </span>
+              </figcaption>
             </figure>
           );
         })}

@@ -42,7 +42,7 @@ export const PROMO = {
   fim: '2026-09-27T23:59:59-03:00',
 };
 
-export const CONTACT_EMAIL = 'contato@seudominio.com.br';
+export const CONTACT_EMAIL = 'recadodoceu@gmail.com';
 
 // Amostra grátis: quando tiver a URL do webhook da sua ferramenta de
 // e-mail/WhatsApp, cole aqui. Os dados são enviados via POST em JSON:

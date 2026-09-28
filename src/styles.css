@@ -1834,3 +1834,30 @@ h2 {
 .downsell-guarantee p {
   color: var(--text-soft);
 }
+
+/* ---------- Depoimentos escritos na faixa infinita ---------- */
+.marquee .testimonial {
+  flex: 0 0 auto;
+  width: min(80vw, 340px);
+  margin-right: 18px; /* margem em vez de gap: mantém a emenda do loop exata */
+  scroll-snap-align: none;
+  white-space: normal;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.testimonial blockquote {
+  font-size: 1.25rem;
+}
+
+.avatar-initial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold-faint);
+  border: 1px solid var(--gold-light);
+  color: var(--gold-text);
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
